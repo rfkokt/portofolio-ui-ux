@@ -1,0 +1,9 @@
+footer {
+  text-align: center;
+  .logo {
+    @include logo();
+  }
+  p {
+    color: $baseText;
+  }
+}

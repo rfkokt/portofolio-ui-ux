@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+
+// Abstract
+@import "./abstracts/mixins";
+@import "./abstracts//variables";
+
+// Layouts
+@import "./layouts/navbar";
+@import "./layouts/footer";
+
+// Component
+@import "./components/sidedrawer";
+@import "./components/jumbotron";
+@import "./components/about";
+@import "./components/showcase";
+@import "./components/testimonial";
+
+// Reset
+@import "./base/reset";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter";
+  margin: 0;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  @include tablet {
+    width: 90%;
+  }
+
+  @include desktop {
+    width: 85%;
+  }
+}

@@ -1,0 +1,73 @@
+.about {
+  margin-top: 80px;
+
+  @include tablet {
+    margin-top: 280px;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+
+  &_image {
+    width: 100%;
+    overflow: hidden;
+
+    &::after {
+      @include tablet {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: $secondaryText;
+        transform: translate(-5px, 10px);
+        z-index: -1;
+      }
+    }
+
+    @include tablet {
+      max-width: 400px;
+      margin-top: 60px;
+      margin-right: 40px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  &_content {
+    width: 100%;
+
+    @include tablet {
+      width: 70%;
+      padding: 20px;
+      margin-top: 25px;
+    }
+
+    @include desktop {
+      width: 40%;
+      margin-top: 75px;
+    }
+
+    h2 {
+      font-size: 2em;
+      line-height: 1.5;
+      span {
+        color: $secondaryText;
+      }
+    }
+    p {
+      text-align: justify;
+
+      @include tablet {
+        width: 250px;
+      }
+
+      @include desktop {
+        width: 260px;
+      }
+      color: $baseText;
+    }
+  }
+}

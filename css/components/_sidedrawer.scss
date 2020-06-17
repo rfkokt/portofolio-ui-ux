@@ -1,0 +1,38 @@
+.sidedrawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  height: 100vh;
+  background: $bgBlue;
+  transition: 0.4s ease;
+  width: 60%;
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: right;
+  opacity: 0;
+  z-index: 4;
+
+  @include tablet {
+    display: none;
+  }
+}
+.sidedrawer.active {
+  right: 0;
+  opacity: 1;
+}
+
+.backdrop {
+  z-index: 3;
+  height: 100vh;
+  background: rgba($color: $primaryText, $alpha: 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  display: none;
+}
+.backdrop.show {
+  opacity: 1;
+  display: block;
+}

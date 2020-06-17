@@ -1,0 +1,137 @@
+.jumbotron {
+  width: 100%;
+
+  @include tablet {
+    display: flex;
+    position: relative;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 111.2vw;
+    max-height: 667px;
+    background: $bgBlue;
+    top: 0px;
+    left: 30%;
+    z-index: -1;
+
+    @include tablet {
+      height: 71.7vw;
+      max-width: 692px;
+      width: 60%;
+      left: 25%;
+    }
+
+    @include desktop {
+      width: 60%;
+      left: 30%;
+      max-height: 707px;
+    }
+  }
+
+  &_image {
+    width: 100%;
+    overflow: hidden;
+    text-align: right;
+
+    @include tablet {
+      position: absolute;
+      order: 2;
+      width: 60%;
+      top: 40px;
+      right: 0px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  &_content {
+    padding: 20px;
+    font-family: "Poppins";
+
+    @include tablet {
+      order: 1;
+      margin-top: 140px;
+      width: 70%;
+      padding: 2.3rem;
+    }
+    @include desktop {
+      padding: 5rem 6rem;
+    }
+
+    &_name {
+      font-size: 7vw;
+      font-weight: 500;
+      margin: 1rem 0;
+      span {
+        color: $secondaryText;
+      }
+
+      @include tablet {
+        font-size: 4vw;
+      }
+    }
+    &_role {
+      font-size: 10vw;
+      font-weight: bold;
+      margin: 1rem 0;
+
+      @include tablet {
+        font-size: 6vw;
+      }
+    }
+
+    &_cta {
+      cursor: pointer;
+      margin-right: 5px;
+      display: block;
+
+      img {
+        transition: 0.4s ease;
+      }
+
+      &:active {
+        color: $secondaryText;
+      }
+
+      &:hover {
+        img {
+          transform: translateX(10px);
+        }
+      }
+    }
+
+    &_socials {
+      @include tablet {
+        transform: translateY(170px);
+      }
+
+      ul {
+        margin-top: 30px;
+        display: flex;
+        li {
+          margin-right: 10px;
+          a {
+            color: $baseText;
+            transition: 0.4s ease;
+            display: block;
+
+            .iconify {
+              font-size: 20px;
+            }
+
+            &:hover {
+              transform: translateY(-4px);
+              color: $secondaryText;
+            }
+          }
+        }
+      }
+    }
+  }
+}
