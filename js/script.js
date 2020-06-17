@@ -19,11 +19,12 @@ console.log(indicators);
 
 /* <img src="./assets//portfolio1.png" alt="" /> */
 
-let image = [1, 2, 3, 4];
+// let image = [1, 2, 3, 4];
 
 window.onload = () => {
   let i = 1;
   renderImage(1);
+  renderProfile(1);
   // setInterval(() => {
   //   if (i > 4) {
   //     i = 1;
@@ -40,9 +41,11 @@ for (const indocator of indicators) {
 }
 
 function renderImage(imageNum) {
+  console.log(imageNum)
   let imageHTML = ``;
 
   for (const indicator of indicators) {
+    console.log(indicator)
     if (imageNum === indicator.id) {
       indicator.classList.add("active");
     } else {
@@ -57,18 +60,18 @@ function renderImage(imageNum) {
 
 // Testimonial Part
 const persons = document.querySelectorAll(".profile_picture");
+const profiles = document.querySelectorAll(".profile_picture");
+
 const personName = document.querySelector(".testimonial_bio_name");
 const personRole = document.querySelector(".testimonial_bio_role");
 const personContent = document.querySelector(".testimonial_content_text");
 const personStars = document.querySelector(".testimonial_content_stars");
 
-let testimonials = [
-  {
+let testimonials = [{
     id: "1",
     name: "Calvin Henry",
     role: "Restaurant Owner",
-    content:
-      "Finally, I can grow my business through digital products. All thanks to Steward",
+    content: "Finally, I can grow my business through digital products. All thanks to Steward",
     stars: 4,
   },
   {
@@ -82,18 +85,23 @@ let testimonials = [
     id: "3",
     name: "Julie Bell",
     role: "Copywriter",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed vitae enim dui elementum, amet.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed vitae enim dui elementum, amet.",
     stars: 5,
   },
 ];
 
 console.log(persons);
 
-for (person of persons) {
-  person.addEventListener("click", (e) => {
+for (profile of profiles) {
+  profile.addEventListener("click", (e) => {
     let index = e.target.id.split("-")[1];
     renderContent(index);
+  });
+}
+
+for (const person of persons) {
+  person.addEventListener("click", (e) => {
+    renderProfile(e.target.id.split("-")[1])
   });
 }
 
@@ -113,6 +121,19 @@ function renderContent(index) {
   ></span>`;
 
     personStars.innerHTML = starHTML;
+  }
+}
+
+function renderProfile(profileNum) {
+  console.log(profileNum)
+  let imageHTML = ``;
+  for (const person of persons) {
+    console.log(person)
+    if (profileNum === person.id) {
+      person.classList.add("active");
+    } else {
+      person.classList.remove("active");
+    }
   }
 }
 

@@ -25,7 +25,21 @@
         width: 100%;
       }
     }
+
+    &_picture.active {
+      width: 70px;
+      height: 70px;
+      overflow: hidden;
+      margin-right: 20px;
+      border: 3px solid white;
+      border-radius: 50%;
+      transition: 0.4s ease-in;
+      transition: 0.4 ease-in-out;
+      box-shadow: 10px 10px 30px rgba($color: #000, $alpha: 0.4);
+    }
   }
+
+
 
   &_bio {
     &_name {
@@ -52,6 +66,7 @@
       .star {
         color: #d8d8d8;
       }
+
       .star.active {
         color: $yellowText;
       }

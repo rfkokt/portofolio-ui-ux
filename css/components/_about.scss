@@ -31,6 +31,7 @@
       margin-top: 60px;
       margin-right: 40px;
     }
+
     img {
       width: 100%;
     }
@@ -53,10 +54,12 @@
     h2 {
       font-size: 2em;
       line-height: 1.5;
+
       span {
         color: $secondaryText;
       }
     }
+
     p {
       text-align: justify;
 
@@ -67,6 +70,7 @@
       @include desktop {
         width: 260px;
       }
+
       color: $baseText;
     }
   }
