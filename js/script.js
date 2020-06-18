@@ -40,20 +40,20 @@ for (const indocator of indicators) {
   });
 }
 
-function renderImage(imageNum) {
-  console.log(imageNum)
+function renderImage(i) {
+  console.log(i)
   let imageHTML = ``;
 
   for (const indicator of indicators) {
     console.log(indicator)
-    if (imageNum === indicator.id) {
+    if (i === indicator.id) {
       indicator.classList.add("active");
     } else {
       indicator.classList.remove("active");
     }
   }
 
-  showcaseImageContainer.innerHTML = `<img src="./assets//portfolio${imageNum}.png" alt="" />`;
+  showcaseImageContainer.innerHTML = `<img src="./assets//portfolio${i}.png" alt="" />`;
 }
 
 // Showcase part
