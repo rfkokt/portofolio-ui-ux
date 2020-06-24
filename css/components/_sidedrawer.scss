@@ -16,6 +16,7 @@
     display: none;
   }
 }
+
 .sidedrawer.active {
   right: 0;
   opacity: 1;
@@ -32,6 +33,7 @@
   opacity: 0;
   display: none;
 }
+
 .backdrop.show {
   opacity: 1;
   display: block;
